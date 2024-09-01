@@ -21,4 +21,9 @@ public class FileLib {
 		Workbook wb = WorkbookFactory.create(fis);
 		return wb.getSheet(sheetName).getRow(row).getCell(cell).getStringCellValue();
 	}
+	public String readDataFromExcel(String sheetName,int row, int cell) throws EncryptedDocumentException, IOException {
+		FileInputStream fis=new FileInputStream("./data/spotifytestscript.xlsx");
+		Workbook wb = WorkbookFactory.create(fis);
+		return wb.getSheet(sheetName).getRow(row).getCell(cell).getStringCellValue();
+	}
 }
